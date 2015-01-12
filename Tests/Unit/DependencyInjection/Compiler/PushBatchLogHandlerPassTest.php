@@ -50,6 +50,7 @@ class PushBatchLogHandlerPassTest extends \PHPUnit_Framework_TestCase
         $container = $this
             ->getMockBuilder('Symfony\Component\DependencyInjection\ContainerBuilder')
             ->disableOriginalConstructor()
+            ->setMethods(array('has', 'getDefinition'))
             ->getMock();
 
         $container->expects($this->any())
